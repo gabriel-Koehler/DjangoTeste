@@ -5,7 +5,8 @@ from .models import Usuario,Departament
 
 # Create your views here.
 def index(request):
-    item=Usuario.objects.all()
-    Departament.objects
-    return HttpResponse("Hello word",item)
+
+    usuarios=Usuario.objects.all().values()
+    print(usuarios)
+    return  render(request,'index.html')
 
