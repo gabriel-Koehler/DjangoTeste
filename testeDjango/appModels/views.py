@@ -1,14 +1,17 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-
-from .models import Usuario,Departament
+from django.conf import  settings
+# from testeDjango.services.handlerDataset import testeFunction
+import pandas as pd
 
 # Create your views here.
 def index(request):
-    teste=Usuario(name="name",email="email@mail.com",password="password")
+    print(settings.ARCHIVE_CSV)
+    # data=pd.read_csv('archive/datatran2007.csv')
+    # print(data)
 
-    usuarios=Usuario.objects.all().values()
-    print(usuarios)
+
+
 
     return  render(request,'index.html')
+
 
